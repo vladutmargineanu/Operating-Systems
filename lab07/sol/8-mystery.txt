@@ -1,0 +1,11 @@
+Programul este un client UDP simplu, care creează un socket UDP și
+trimite un mesaj serverului (ip 127.0.0.1, port 7777).
+
+Se observă că rulând ''strace ./mystery'' nu vedem tot mesajul trimis
+(vezi apelul ''sendto'').
+
+
+Soluție: fie se rulează strace cu -s 64 (default e 32 si mesajul are
+vreo 47 de caractere, de aia apare incomplet), fie cu netcat ascultăm pe
+portul 7777 (''nc -ul 7777'') și primim mesajul trimis de client.
+Mesajul este: ''"This is a long message, because I'm a 0xBADA55!"''

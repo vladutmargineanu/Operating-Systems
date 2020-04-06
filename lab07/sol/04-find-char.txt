@@ -1,0 +1,8 @@
+Aici după rularea gprof se va observa că se apelează de multe
+ori funcţia strlen, în mod inutil pentru acelaşi string.
+
+Soluţia imediată este calcularea în afara buclei a valorii lui 
+strlen.
+
+perf record -e cycles:pp -c 10000 -d ./find-char
+99,44%  find-char  libc-2.19.so       [.] strlen

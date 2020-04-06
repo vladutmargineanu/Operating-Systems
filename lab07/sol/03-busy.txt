@@ -1,0 +1,5 @@
+Aici totul este simplu se rulează perf top şi se observă
+că procesul busy ocupă cea mai mare parte din timp.
+ 
+E.x.:
+76,30%  busy                                [.] main

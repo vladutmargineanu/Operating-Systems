@@ -1,0 +1,26 @@
+*  valgrind --tool=memcheck ./flowers
+
+==10343== Invalid read of size 1
+==10343==    at 0x4C29502: __GI_strlen (mc_replace_strmem.c:391)
+==10343==    by 0x4E9907A: puts (ioputs.c:37)
+==10343==    by 0x4005A4: main (flowers.c:16)
+==10343==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==10343==
+
+Avem așa:
+
+const char *flowers[] = {
+        "rose", "tulip", "daisy"
+        "petunia", "orchid", "lily"
+};
+
+
+   choice = rand() % 6;
+   printf("%s\n", flowers[choice]);
+
+Problema este că la un moment dat choice = 5,
+
+flowers[5] e în afara array-ului flowers care are dimensiunea 5.
+
+
+

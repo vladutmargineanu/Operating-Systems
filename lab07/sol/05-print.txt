@@ -1,0 +1,3 @@
+* make print merge fara Makefile, pentru ca se executa o regula implicita make.
+* se afiseaza BA, pentru ca printarea la stdout esste bufferata, iar
+ la stderr nu [s-a discutat la curs]
